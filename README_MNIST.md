@@ -23,6 +23,7 @@ I’ve always loved mathematics and thought AI was cool — but this project gen
 - Architecture: 784 → 128 → 64 → 10 with ReLU and Softmax
 - Training: Stochastic Gradient Descent using mini-batches
 - Best Accuracy: 99.99% (with Cross Entropy + Learning rate = 0.12 + Epochs = 30)
+- Accuracy vs Epoch and Loss vs Epoch graph
 - Personal Feature: Visualizer - used to view the predictions using matplotlib (see below)
 - A feature to show how long training the network took, for experimenting on different functions etc.
 
@@ -87,7 +88,8 @@ Each of these took time and effort to solve — but they taught me how to think 
 - loss.py              - MSE and Cross Entropy loss functions  
 - activations.py       - Activation functions and derivatives  
 - mnist_loader.py      - Loads and preprocesses dataset  
-- visualizer.py        - Optional tool to view predictions  
+- visualizer.py        - Optional tool to view predictions
+- metrics.py           - Optional tool to view graphs  
 - train.csv / test.csv - Required MNIST dataset files
 
 ## How to Run
@@ -117,8 +119,8 @@ After training:
 
 You can view image-by-image or in custom-sized batches using:
 
-# Uncomment this in main.py to use:
-# preview_predictions(net, input_test)
+Uncomment this in main.py to use:
+preview_predictions(net, input_test)
 
 When run:
 - You’ll be prompted to enter a start index, how many images to view, and whether to view one-by-one or in batches
@@ -133,6 +135,14 @@ Here’s a batch of predictions made by the network:
 
 # Batch of images
 ![Example Predictions Batch](images/example_predictions_batch.png)
+
+## Optional: Accuracy vs Epoch, Loss vs Epoch graph
+
+Here's an example of the graphs I got (with 99.99% accuracy):
+
+![Example training metrics](images/example_training_metrics.png)
+
+The code that needs to be uncommented to view these is documented inside main.py.
 
 ## Technologies Used
 
